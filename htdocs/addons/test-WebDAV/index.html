@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Test WebDAC</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="author" content="Tom Rake"/>
+    <script type='text/javascript' src='/amber/support/amber.js'></script>
+    <script type='text/javascript' src='/amber/support/requirejs/require.min.js'></script>
+</head>
+
+<body>
+<script type='text/javascript'>
+    require.config({
+        paths: {
+            "test-WebDAV": 'src'
+        }
+    });
+    require(
+        ["amber/devel","test-WebDAV/TestWebDAV"],
+        function (amber) {
+            amber.initialize({'transport.defaultAmdNamespace': "test-WebDAV"});
+            amber.popupHelios();
+        }
+    );
+</script>
+</body>
+</html> 
+
+
